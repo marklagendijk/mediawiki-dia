@@ -43,8 +43,10 @@ class DiaHandler extends ImageHandler
     function normaliseParams($image, &$params)
     {
         if (!isset($params['height'])) {
-            $params['height'] = $params['width'];
+            $imageSize = $this->getDiaSvgImageSize($image->getLocalRefPath());
+            $params['height'] = File::scaleHeight($imageSize['width'], $imageSize['height'], $params['width']);
         }
+
         return true;
     }
 
@@ -92,7 +94,7 @@ class DiaHandler extends ImageHandler
     }
 
     /**
-     * Calculates the diagrams' size.
+     * Gets the diagrams' size.
      * @param File $file
      * @param string $path
      * @param bool $metadata
@@ -100,23 +102,53 @@ class DiaHandler extends ImageHandler
      */
     function getImageSize($file, $path, $metadata = false)
     {
-        // First create a temporary SVG
-        $svgPath = $path . '.svg';
-        $this->convertToSvg($path, $svgPath);
+        // Force the (re)creation of the SVG file
+        $this->convertToSvg($path, $path. '.svg', $error);
 
+        // Get and return the imageSize
+        $imageSize = $this->getDiaSvgImageSize($path);
+        return array(
+            $imageSize['width'],
+            $imageSize['height'],
+            'SVG',
+            'width="'.  $imageSize['width']. '" height="'. $imageSize['height']. '"'
+        );
+    }
+
+    /**
+     * Gets the size of an Dia diagram or SVG file created by Dia.
+     * Note: the root element of an Dia SVG contains width and height in centimeters.
+     * @param $path - The path of a `.dia` or `.svg` file.
+     * @return array
+     */
+    function getDiaSvgImageSize($path){
         try {
+            // Set the $diaPath and $svgPath
+            if(strpos($path, '.svg') === false){
+                $diaPath = $path;
+                $svgPath = $path . '.svg';
+            }
+            else{
+                $svgPath = $path;
+                $diaPath = str_replace('.svg', '', $path);
+            }
+
+            // Create the SVG if it doesn't exist yet
+            if(!file_exists($svgPath)){
+                $this->convertToSvg($diaPath, $svgPath, $error);
+            }
             // Load the SVG, and use the width and height attributes to get the size.
             $xml = simplexml_load_file($svgPath);
-            $width = $this->cmToPx($xml['width']);
-            $height = $this->cmToPx($xml['height']);
+
             return array(
-                $width,
-                $height,
-                'SVG',
-                "width=\"$width\" height=\"$height\""
+                'width' => $this->cmToPx($xml['width']),
+                'height' => $this->cmToPx($xml['height'])
             );
         } catch (Exception $e) {
-            return array(0, 0, 'SVG', "width=\"0\" height=\"0\"");
+            return array(
+                'width' => 0,
+                'height' => 0
+            );
         }
     }
 
