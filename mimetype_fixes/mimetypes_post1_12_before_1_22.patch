@@ -1,0 +1,13 @@
+Needed to install Dia extension on MediaWiki > 1.12 < 1.22. 
+Note: I don't know exactly up till which MediaWiki version this patch is required, I only know that it is not needed anymore on 1.22.
+
+--- includes/MimeMagic.php      2008-07-04 09:27:27.000000000 +0200
++++ includes/MimeMagic.php      2008-07-04 09:27:14.000000000 +0200
+@@ -462,6 +462,7 @@
+                                'svg'                               => 'image/svg+xml',
+                                'http://www.w3.org/1999/xhtml:html' => 'text/html', // application/xhtml+xml?
+                                'html'                              => 'text/html', // application/xhtml+xml?
++                                'http://www.lysator.liu.se/~alla/dia/:diagram' => 'application/x-dia-diagram',
+                        );
+                        if( isset( $types[$xml->rootElement] ) ) {
+                                $mime = $types[$xml->rootElement];
