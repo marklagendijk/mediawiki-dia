@@ -1,5 +1,5 @@
 # MediaWiki Dia plugin
-This MediaWiki Dia plugin allows [Dia diagrams]((http://dia-installer.de/) to be embedded/rendered inside MediaWiki pages. It can be used to have thumbnails of specified size to be automatically generated from the uploaded .dia files.
+This MediaWiki Dia plugin allows [Dia diagrams](http://dia-installer.de/) to be embedded/rendered inside MediaWiki pages. It can be used to have thumbnails of specified size to be automatically generated from the uploaded .dia files.
 
 This is achieved by having Dia installed on the server, and calling Dia to render the `.dia` file as `.svg`.
 
