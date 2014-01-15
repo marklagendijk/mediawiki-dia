@@ -1,0 +1,33 @@
+Needed to install Dia extension on MediaWiki < 1.12.
+
+Index: includes/mime.types
+===================================================================
+--- includes/mime.types	(revision 27053)
++++ includes/mime.types	(working copy)
+@@ -25,6 +25,7 @@
+ application/x-chess-pgn pgn
+ application/x-cpio cpio
+ application/x-csh csh
++application/x-dia-diagram dia
+ application/x-director dcr dir dxr
+ application/x-dvi dvi
+ application/x-futuresplash spl
+@@ -115,4 +116,4 @@
+ video/x-msvideo avi
+ video/x-ogg ogm ogg
+ video/x-sgi-movie movie
+-x-conference/x-cooltalk ice
+\ No newline at end of file
++x-conference/x-cooltalk ice
+Index: includes/mime.info
+===================================================================
+--- includes/mime.info	(revision 27053)
++++ includes/mime.info	(working copy)
+@@ -24,6 +24,7 @@
+ application/postscript	[DRAWING]
+ application/x-latex	[DRAWING]
+ application/x-tex	[DRAWING]
++application/x-dia-diagram [DRAWING]
+ 
+ 
+ audio/mp3 audio/mpeg3 audio/mpeg	[AUDIO]
