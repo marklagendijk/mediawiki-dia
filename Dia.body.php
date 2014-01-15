@@ -57,13 +57,13 @@ class DiaHandler extends ImageHandler
 	 */
 	function doTransform($image, $dstPath, $dstUrl, $params, $flags = 0)
     {
-		$this->normaliseParams($image, $params);
-
+        global $wgScriptPath;
+        $this->normaliseParams($image, $params);
 		$srcPath = $image->getLocalRefPath();
 		$dstPath = $srcPath . '.svg';
-		$dstUrl = substr($dstPath, strpos($dstPath, '/images/'));
+		$dstUrl = $wgScriptPath. substr($dstPath, strpos($dstPath, '/images/'));
 
-		if($this->convertToSvg($srcPath, $dstPath)){
+        if ($flags & self::TRANSFORM_LATER || $this->convertToSvg($srcPath, $dstPath )){
 			return new ThumbnailImage($image, $dstUrl, $dstPath, $params);
 		}
 		else{
@@ -109,7 +109,7 @@ class DiaHandler extends ImageHandler
 				$width,
 				$height,
 				'SVG',
-				"width=\"$height\" height=\"$height\""
+				"width=\"$width\" height=\"$height\""
 			);
 		}
 		catch(Exception $e){
