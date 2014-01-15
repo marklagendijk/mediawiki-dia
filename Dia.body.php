@@ -159,8 +159,9 @@ class DiaHandler extends ImageHandler
      */
     function cmToPx($cm)
     {
+        $diaCmToPxFactor = 19.981;
         $cm = str_replace('cm', '', $cm);
-        return round($cm * 37.8);
+        return round($cm * $diaCmToPxFactor);
     }
 
     /**
