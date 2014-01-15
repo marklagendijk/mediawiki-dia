@@ -19,6 +19,30 @@ This is achieved by having Dia installed on the server, and calling Dia to trans
    $wgEnableUploads = true;
    ```
 
+## Usage
+### Uploading
+Just upload any `.dia` file. If everything is working correctly, it will show a thumbnail of the diagram.
 
+### Displaying
+Add an `File` tag pointing to the `.dia` file. The diagram will always display with the correct ratio, specified `width` and `height` are treated as maximums. Some examples:
+```
+Default size:
+[[File:BA6_Entities_Domain.dia]]
+
+Specify width and height:
+[[File:BA6_Entities_Domain.dia|500x300px]]
+
+Specify width only:
+[[File:BA6_Entities_Domain.dia|500px]]
+
+Specify height only:
+[[File:BA6_Entities_Domain.dia|x300px]]
+```
+
+### Editing
+1. Click on a displayed Dia diagram. This wil take you to the page of the diagram file.
+2. Click the link with the filename to download the `.dia` file. If this does not work, use right-click -> save as.
+3. Edit the `.dia` file on your local machine, using [Dia](http://dia-installer.de), and save your changes.
+4. Upload the changed `.dia` file.
 
 
