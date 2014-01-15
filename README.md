@@ -48,6 +48,6 @@ Specify height only:
 
 ## Credits
 - Marcel Toele: wrote the original Dia plugin in 2007.
-- Vitaliy Filippov: forked the original Dia plugin after it was abandoned, and kept it working kept it working from 2011 - 2014.
+- Vitaliy Filippov: [forked](https://github.com/mediawiki4intranet/Dia) the original Dia plugin after it was abandoned, and kept it working kept it working from 2011 - 2014.
 - Mark Lagendijk: wrote this new Dia plugin, using the original plugin as example and inspiration, but displaying images as `.svg` instaed of `.png`, solving several problems of the original plugin.
 
