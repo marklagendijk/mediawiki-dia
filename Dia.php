@@ -2,10 +2,10 @@
 /**
  * Setup for Dia plugin, a plugin that allows Dia (http://live.gnome.org/Dia) diagrams
  * to be rendered in MediaWiki pages.
- * 
+ *
  * Inspired by the orignal Dia plugin written by Marcel Toele, and maintained by Vitaliy Filippov.
- * The main difference is that this plugin displays the diagrams using `.svg` instead of `.png`, 
- * which solves most problems the original plugin had. 
+ * The main difference is that this plugin displays the diagrams using `.svg` instead of `.png`,
+ * which solves most problems the original plugin had.
  *
  * @package Dia
  * @subpackage Extensions
@@ -14,17 +14,16 @@
  * @licence MIT License
  */
 
-if (!defined('MEDIAWIKI'))
-{
+if (!defined('MEDIAWIKI')) {
     echo("This file is an extension to the MediaWiki software and cannot be used standalone.\n");
     die(1);
 }
 
 // Credits
 $wgExtensionCredits['other'][] = array(
-    'name'        => 'Dia',
-    'author'      => 'Mark Lagendijk',
-    'url'         => 'http://mediawiki.org/wiki/Extension:Dia',
+    'name' => 'Dia',
+    'author' => 'Mark Lagendijk',
+    'url' => 'http://mediawiki.org/wiki/Extension:Dia',
     'description' => 'Allows Dia diagrams to be rendered inside MediaWiki pages.',
 );
 
