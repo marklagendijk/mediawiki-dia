@@ -46,4 +46,8 @@ Specify height only:
 3. Edit the `.dia` file on your local machine, using [Dia](http://dia-installer.de), and save your changes.
 4. Upload the changed `.dia` file.
 
+## Credits
+- Marcel Toele: wrote the original Dia plugin in 2007.
+- Vitaliy Filippov: forked the original Dia plugin after it was abandoned, and kept it working kept it working from 2011 - 2014.
+- Mark Lagendijk: wrote this new Dia plugin, using the original plugin as example and inspiration, but displaying images as `.svg` instaed of `.png`, solving several problems of the original plugin.
 
