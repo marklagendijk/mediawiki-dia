@@ -35,9 +35,6 @@ Specify width and height:
 
 Specify width only:
 [[File:MyDiagram.dia|500px]]
-
-Specify height only:
-[[File:MyDiagram.dia|x300px]]
 ```
 
 ### Editing
