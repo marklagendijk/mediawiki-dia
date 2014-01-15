@@ -18,6 +18,7 @@ This is achieved by having Dia installed on the server, and calling Dia to trans
    ``` php
    $wgEnableUploads = true;
    ```
+6. If you have an older version you might need to run the appropriate `mimetype` patch. Try uploadin a `.dia` file to see if this is neccesary.
 
 ## Usage
 ### Uploading
