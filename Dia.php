@@ -1,7 +1,11 @@
 <?php
 /**
- * Setup for Dia extension, an extension that allows Dia (http://live.gnome.org/Dia) diagrams
+ * Setup for Dia plugin, a plugin that allows Dia (http://live.gnome.org/Dia) diagrams
  * to be rendered in MediaWiki pages.
+ * 
+ * Inspired by the orignal Dia plugin written by Marcel Toele, and maintained by Vitaliy Filippov.
+ * The main difference is that this plugin displays the diagrams using `.svg` instead of `.png`, 
+ * which solves most problems the original plugin had. 
  *
  * @package Dia
  * @subpackage Extensions
