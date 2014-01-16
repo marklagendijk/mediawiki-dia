@@ -23,7 +23,7 @@ if (!defined('MEDIAWIKI')) {
 $wgExtensionCredits['other'][] = array(
     'name' => 'Dia',
     'author' => 'Mark Lagendijk',
-    'url' => 'http://mediawiki.org/wiki/Extension:Dia',
+    'url' => 'https://github.com/marklagendijk/mediawiki-dia',
     'description' => 'Allows Dia diagrams to be rendered inside MediaWiki pages.',
 );
 
